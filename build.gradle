@@ -1,0 +1,22 @@
+apply plugin: 'java'
+version = '1.0.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+  jcenter()
+}
+task flatfile(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'the main app for accessing webcam',  
+        	'Implementation-Version': version,
+        	'Main-Class': 'JAVA'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
+// dependencies {
+//     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.3.1'
+//     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
+// }
