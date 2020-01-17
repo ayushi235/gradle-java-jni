@@ -1,4 +1,4 @@
-class current 
+class java2 
 {
     public static void main(String[] args) {
         Thread t = Thread.currentThread();
@@ -8,7 +8,8 @@ class current
         try{
             for(int n=5;n>0;n--){
                 System.out.println(n);
-                Thread.sleep(1000);            }
+                Thread.sleep(1000); 
+            }
         }
         catch(InterruptedException e){
             System.out.println("main Thread Interupted");

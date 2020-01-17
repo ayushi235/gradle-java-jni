@@ -9,7 +9,7 @@ task flatfile(type: Jar) {
 	manifest {
         attributes 'Implementation-Title': 'the main app for accessing webcam',  
         	'Implementation-Version': version,
-        	'Main-Class': 'JAVA'
+        	'Main-Class': 'java2'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
